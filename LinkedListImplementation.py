@@ -99,6 +99,17 @@ class LinkedList:
         self.tail.next_node = None
         self.size -= 1
 
+    def removeAny(self, position):
+        p = self.head
+        i = 1
+        while i < position - 1:
+            p = p.next_node
+            i += 1
+        e = p.next_node.get_data()
+        p.next = p.next_node.next_node
+        self.size -= 1
+        return e
+
     def __len__(self):
         return self.size
 
@@ -119,6 +130,9 @@ singllyLinkedList.addAtAny(7, 4)
 singllyLinkedList.traverse()
 print(singllyLinkedList.removeFirst())
 print("---")
+singllyLinkedList.traverse()
+print("---")
+print(singllyLinkedList.removeAny(2))
 singllyLinkedList.traverse()
 
 
