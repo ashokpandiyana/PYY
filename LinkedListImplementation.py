@@ -1,5 +1,4 @@
 class Node:
-    # __slots__ = '_element', '_next'
 
     def __init__(self, data, next_node=None):
         self.data = data
