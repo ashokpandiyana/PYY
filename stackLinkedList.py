@@ -39,7 +39,7 @@ class StackLinkedList:
         self.size -= 1
         return e
 
-    def top(self):
+    def top_elment(self):
         if self.isEmpty():
             return "Stack is Empty"
         return self.top.get_data()
@@ -67,7 +67,7 @@ print(stackImp.isEmpty())
 print(stackImp.pop())
 print(stackImp.isEmpty())
 stackImp.push(40)
-print(stackImp.top)
+print(stackImp.top_elment())
 stackImp.push(50)
 print(len(stackImp))
 print(stackImp.pop())
