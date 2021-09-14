@@ -56,11 +56,6 @@ class CircularSinglyLinkedList:
             last.next_node = self.tail.next_node
             self.tail.next_node = last
         self.tail = last
-        # curr_node = self.head
-        # while(curr_node):
-        #     curr_node = curr_node.next_node
-        # curr_node.next_node = Node(data)
-
         self.size += 1
 
     def addAtFirst(self, data):

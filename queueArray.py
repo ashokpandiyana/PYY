@@ -26,7 +26,7 @@ class Queue:
             print(self.data[i])
 
 
-queueImp = Queue()
+queueImp = Queue() 
 queueImp.enqueue(10)
 queueImp.enqueue(20)
 print(len(queueImp))
