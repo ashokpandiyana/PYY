@@ -25,53 +25,55 @@ class QueueLinkedList:
     def enqueue(self, data):
         value = Node(data)
         if self.isEmpty():
-            self.top = value
+            self.front = value
         else:
-            value.next_node = self.top
-            self.top = value
+            self.rear.next_node = value
+        self.rear = value
         self.size += 1
 
-    def pop(self):
+    def dequeue(self):
         if self.isEmpty():
             return "Queue is Empty"
         else:
-            e = self.top.get_data()
-            self.top = self.top.next_node
+            e = self.front.get_data()
+            self.front = self.front.next_node
         self.size -= 1
+        if self.isEmpty():
+            self.rear = None
         return e
 
     def top_elment(self):
         if self.isEmpty():
             return "Queue is Empty"
-        return self.top.get_data()
+        return self.front.get_data()
 
     def isEmpty(self):
-        return self.top == None
+        return self.size == 0
 
     def __len__(self):
         return self.size
 
     def traverse(self):
-        p = self.top
+        p = self.front
         while(p):
             print(p.get_data(), end="-->")
             p = p.next_node
         print()
 
 
-QueueImp = QueueLinkedList()
-QueueImp.push(10)
-QueueImp.push(20)
-print(len(QueueImp))
-print(QueueImp.pop())
-print(QueueImp.isEmpty())
-print(QueueImp.pop())
-print(QueueImp.isEmpty())
-QueueImp.push(40)
-print(QueueImp.top_elment())
-QueueImp.push(50)
-print(len(QueueImp))
-print(QueueImp.pop())
-QueueImp.push(60)
-QueueImp.push(70)
-QueueImp.traverse()
+# QueueImp = QueueLinkedList()
+# QueueImp.enqueue(10)
+# QueueImp.enqueue(20)
+# print(len(QueueImp))
+# print(QueueImp.dequeue())
+# print(QueueImp.isEmpty())
+# print(QueueImp.dequeue())
+# print(QueueImp.isEmpty())
+# QueueImp.enqueue(40)
+# print(QueueImp.top_elment())
+# QueueImp.enqueue(50)
+# print(len(QueueImp))
+# print(QueueImp.dequeue())
+# QueueImp.enqueue(60)
+# QueueImp.enqueue(70)
+# QueueImp.traverse()
