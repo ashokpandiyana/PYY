@@ -56,6 +56,55 @@ class DoublyLinkedList:
             self.head = value
         self.size += 1
 
+    def addAny(self, data, position):
+        value = Node(data, None, None)
+        p = self.head
+        i = 0
+        while i < position - 1:
+            p = p.next_node
+            i += 1
+        value.next_node = p.next_node
+        p.next_node.prev_node = value
+        p.next_node = value
+        self.size += 1
+
+    def removeFirst(self):
+        if self.isEmpty():
+            return "List is Empty"
+        else:
+            e = self.head.get_data()
+            self.head = self.head.next_node
+            self.head.prev_node = None
+        self.size -= 1
+        if self.isEmpty():
+            self.tail = None
+        return e
+
+    def removeLast(self):
+        if self.isEmpty():
+            return "List is Empty"
+        else:
+            e = self.tail.get_data()
+            self.tail = self.tail.prev_node
+            self.tail.next_node = None
+            self.size -= 1
+        return e
+
+    def removeAny(self, position):
+        if self.isEmpty():
+            return "List is Empty"
+        else:
+            p = self.head
+            i = 0
+            while i < position:
+                p = p.next_node
+                i += 1
+            e = p.next_node.get_data()
+            p.next_node = p.next_node.next_node
+            p.next_node.prev_node = p
+            self.size -= 1
+            return e
+
     def traverse(self):
         p = self.head
         while(p):
