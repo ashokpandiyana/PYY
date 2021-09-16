@@ -76,6 +76,14 @@ def largestSum(arr):
     return max_value
 
 
+def bestTimetobuyandsell(prices):
+    max_profit, min_price = 0, float("inf")
+    for price in prices:
+        min_price = min(min_price, price)
+        max_profit = max(max_profit, price - min_price)
+    return max_profit
+
+
 arr1 = [7, 1, 5, 2, 3, 6]
 arr2 = [3, 8, 6, 20, 7]
 n1 = len(arr1)
@@ -87,3 +95,4 @@ print(rearrange([-1, 2, -3, 4, 5, 6, -7, 8, 9]))
 # printUnion(arr1, arr2, n1, n2)
 # printIntersection(arr1, arr2, n1, n2)
 print(largestSum([-2, -3, 4, -1, -2, 1, 5, -3]))
+print(bestTimetobuyandsell([7, 1, 5, 3, 6, 4]))
