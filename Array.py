@@ -84,6 +84,18 @@ def bestTimetobuyandsell(prices):
     return max_profit
 
 
+def moveZeros(a):
+    i = 0
+    n = len(a)
+    for num in a:
+        if num != 0:
+            a[i] = num
+            i += 1
+    for x in range(i, n):
+        a[x] = 0
+    return a
+
+
 arr1 = [7, 1, 5, 2, 3, 6]
 arr2 = [3, 8, 6, 20, 7]
 n1 = len(arr1)
@@ -96,3 +108,4 @@ print(rearrange([-1, 2, -3, 4, 5, 6, -7, 8, 9]))
 # printIntersection(arr1, arr2, n1, n2)
 print(largestSum([-2, -3, 4, -1, -2, 1, 5, -3]))
 print(bestTimetobuyandsell([7, 1, 5, 3, 6, 4]))
+print(moveZeros([0, 1, 3, 0, 7]))
