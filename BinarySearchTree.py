@@ -51,7 +51,7 @@ class BinaryTree:
 x = BinaryTree()
 y = BinaryTree()
 z = BinaryTree()
-a = BinaryTree()
+a = BinaryTree() 
 x.maketree(20, a, a)
 y.maketree(30, a, a)
 z.maketree(10, x, y)
