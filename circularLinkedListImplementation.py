@@ -116,7 +116,7 @@ class CircularSinglyLinkedList:
             p = p.next_node
             i += 1
         e = p.next_node.get_data()
-        p.next = p.next_node.next_node
+        p.next_node = p.next_node.next_node
         self.size -= 1
         return e
 
