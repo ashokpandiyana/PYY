@@ -91,11 +91,11 @@ class LinkedList:
         p = self.head
         i += 1
         while i < self.size - 1:
-            p = p.next
+            p = p.next_node
             i += 1
         self.tail = p
         p = p.next_node
-        e = p._element
+        e = p.get_data()
         self.tail.next_node = None
         self.size -= 1
 

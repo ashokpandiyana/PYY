@@ -79,7 +79,7 @@ class CircularSinglyLinkedList:
             i += 1
         value.next_node = p.next_node
         p.next_node = value
-        size += 1
+        self.size += 1
 
     def removeFirst(self):
         if self.isEmpty():
@@ -104,7 +104,7 @@ class CircularSinglyLinkedList:
             i += 1
         self.tail = p
         p = p.next_node
-        e = p._element
+        e = p.get_data()
         self.tail.next_node = self.head
         self.size -= 1
         return e
