@@ -101,13 +101,13 @@ class LinkedList:
         return count
 
 
-## TEST CASES #
-test1 = LinkedList()
-test2 = LinkedList()
-test1.add_Node(20)
-test1.add_Node(15)
-test1.add_Node(13)
-test1.add_Node(14)
-test1.delete_Node(17)
-print(test1.return_as_lst())
-print(test2.size())
+# ## TEST CASES #
+# test1 = LinkedList()
+# test2 = LinkedList()
+# test1.add_Node(20)
+# test1.add_Node(15)
+# test1.add_Node(13)
+# test1.add_Node(14)
+# test1.delete_Node(17)
+# print(test1.return_as_lst())
+# print(test2.size())

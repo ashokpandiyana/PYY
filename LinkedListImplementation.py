@@ -116,6 +116,24 @@ class LinkedList:
     def isEmpty(self):
         return self.size == 0
 
+    def insertSorted(self, data):
+        value = Node(data)
+        if self.isEmpty():
+            self.head = value
+        else:
+            p = self.head
+            q = self.head
+            while p and p.get_data() < data:
+                q = p
+                p = p.next_node
+            if p == self.head:
+                value.next_node = self.head
+                self.head = value
+            else:
+                value.next_node = q.next_node
+                q.next_node = value
+            self.size += 1
+
 
 # node1 = Node(4)
 # node2 = Node(3)
