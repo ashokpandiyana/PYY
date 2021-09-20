@@ -92,6 +92,13 @@ def intersectionOfArrays(a, b):
             c[n] -= 1
     return output
 
+def mountainArray(a):
+    i = 1
+    while i < len(a) and a[i] > a[i-1]:
+        i+=1
+        
+
+
 
 print(containerWithMostWater([1, 8, 6, 2, 5, 4, 8, 3, 7]))
 print(containerWithMostWaterBinary([1, 8, 6, 2, 5, 4, 8, 3, 7]))
