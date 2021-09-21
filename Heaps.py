@@ -27,21 +27,22 @@ class Heap:
         return self.data[1]
 
     def deleteMax(self):
-        e = data[1]
-        data[1] = data[self.csize]
-        data[csize] = None
+        e = self.data[1]
+        self.data[1] = self.data[self.csize]
+        self.data[self.csize] = -1
         self.csize -= 1
         i = 1
         j = i * 2
         while j <= self.csize:
-            if data[j] < data[j + 1]:
+            if self.data[j] < self.data[j + 1]:
                 j += 1
-            if data[i] < data[j]:
-                data[i], data[j] = data[j], data[i]
+            if self.data[i] < self.data[j]:
+                self.data[i], self.data[j] = self.data[j], self.data[i]
                 i = j
                 j = i * 2
             else:
                 break
+        return e
 
 
 s = Heap()
@@ -51,3 +52,4 @@ s.insert(2)
 s.insert(27)
 s.insert(18)
 print(s.data)
+print(s.deleteMax())
