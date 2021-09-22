@@ -1,6 +1,8 @@
 # Brute Force Approach O(n^2)
 import collections
 
+# O(n^2)
+
 
 def containerWithMostWater(a):
     res = 0
@@ -48,9 +50,7 @@ def majorityElement(nums):
             dicti[num] += 1
 # nums.sort() return nums[len(nums)//2]
 
-# Kadane Algorithm
-
-
+# Kadane
 def maxSubArray(a):
     res = curr_sum = 0
     for i in range(len(a)):
@@ -92,12 +92,16 @@ def intersectionOfArrays(a, b):
             c[n] -= 1
     return output
 
-def mountainArray(a):
-    i = 1
-    while i < len(a) and a[i] > a[i-1]:
-        i+=1
-        
+# T - O(1) S- O(1)
 
+
+def maxones(a):
+    l, output = 0, 0
+    for r, n in enumerate(a):
+        if n == 0:
+            l = r+1
+        output = max(output, r-l+1)
+    return output
 
 
 print(containerWithMostWater([1, 8, 6, 2, 5, 4, 8, 3, 7]))
@@ -108,3 +112,4 @@ print(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
 print(reverseOnlyLetters("ab-cd"))
 print(longestIncreasingSubsequence([0, 3, 1, 6, 2, 2, 7]))
 print(intersectionOfArrays([1, 2, 2, 1], [2, 2]))
+print(maxones([1, 1, 1, 0, 1, 1, 1, 1]))

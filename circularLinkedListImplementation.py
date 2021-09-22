@@ -38,13 +38,14 @@ class CircularSinglyLinkedList:
         print()
 
     def search(self, data):
-        count = 0
+        count, i = 0, 0
         curr_node = self.head
-        while(curr_node):
+        while(i < self.size):
             if (curr_node.get_data() == data):
                 return count
             curr_node = curr_node.next_node
             count += 1
+            i += 1
         return "Not Found"
 
     def addAtLast(self, data):
