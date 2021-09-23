@@ -34,9 +34,16 @@ def anagram(s1, s2):
     return sorted(s1) == sorted(s2)
 
 
+def reverse(s):
+    res = ''
+    for i in s:
+        res = i + res
+    return res
+
+
 print(isPalindrome("gog"))
 print(duplicates("test string"))
 print(rotation("GEEKS", "EKSGE"))
 print(rotation("ABACD", "CDABA"))
 print(anagram("listen", "silent"))
-print(longestPalindrome("forgeeksskeegfor"))
+print(reverse("ABCD"))
