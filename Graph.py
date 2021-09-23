@@ -1,7 +1,10 @@
+import numpy as np
+
+
 class Graph:
     def __init__(self, vertices):
         self.vertices = vertices
-        self.adjMatrix = [[0]*vertices]*vertices
+        self.adjMatrix = np.zeros((vertices, vertices))
 
     def insertEdge(self, u, v, x=1):
         self.adjMatrix[u][v] = x
@@ -51,3 +54,24 @@ class Graph:
 
     def display(self):
         print(self.adjMatrix)
+
+
+G = Graph(4)
+G.display()
+print("Vertices", G.vertices_count())
+print("Edges", G.edge_count())
+G.insertEdge(0, 1)
+G.insertEdge(0, 2)
+G.insertEdge(1, 0)
+G.insertEdge(1, 2)
+G.insertEdge(2, 0)
+G.insertEdge(2, 1)
+G.insertEdge(2, 3)
+G.insertEdge(3, 2)
+G.display()
+print("Vertices", G.vertices_count())
+print("Edges", G.edge_count())
+G.edges()
+print(G.indegree(2))
+G.removeEdge(1, 2)
+print(G.exist_edge(1, 2))
