@@ -135,24 +135,24 @@ class LinkedList:
             self.size += 1
 
 
-# node1 = Node(4)
-# node2 = Node(3)
-# node1.next_node = node2
+node1 = Node(4)
+node2 = Node(3)
+node1.next_node = node2
 
-# singllyLinkedList = LinkedList()
-# singllyLinkedList.head = node1
-# singllyLinkedList.tail = node2
-# singllyLinkedList.addAtFirst(5)
-# singllyLinkedList.addAtLast(6)
-# singllyLinkedList.addAtAny(7, 4)
-# singllyLinkedList.traverse()
-# print(singllyLinkedList.removeFirst())
-# print("---")
-# singllyLinkedList.traverse()
-# print("---")
-# print(singllyLinkedList.removeAny(2))
-# singllyLinkedList.traverse()
+singllyLinkedList = LinkedList()
+singllyLinkedList.head = node1
+singllyLinkedList.tail = node2
+singllyLinkedList.addAtFirst(5)
+singllyLinkedList.addAtLast(6)
+singllyLinkedList.addAtAny(7, 4)
+singllyLinkedList.traverse()
+print(singllyLinkedList.removeFirst())
+print("---")
+singllyLinkedList.traverse()
+print("---")
+print(singllyLinkedList.removeAny(2))
+singllyLinkedList.traverse()
 
 
-# print(node1.get_data())
-# print(node1.get_nextNode().get_data())
+print(node1.get_data())
+print(node1.get_nextNode().get_data())

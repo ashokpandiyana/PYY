@@ -1,10 +1,7 @@
-import numpy as np
-
-
 class Graph:
     def __init__(self, vertices):
         self.vertices = vertices
-        self.adjMatrix = np.zeros((vertices, vertices))
+        self.adjMatrix = [[0]*vertices]*vertices
 
     def insertEdge(self, u, v, x=1):
         self.adjMatrix[u][v] = x
