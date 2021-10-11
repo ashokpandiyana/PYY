@@ -110,6 +110,35 @@ class LinkedList:
         self.size -= 1
         return e
 
+    # def reverse(self):
+    #     prev, curr = None, self.head
+    #     while curr:
+    #         nxt = curr.next_node
+    #         curr.next_node = prev
+    #         prev = curr
+    #         curr = nxt
+    #     return prev.next_node.data
+
+    # def reverserecursive(self, head):
+    #     if not self.head:
+    #         return None
+    #     newHead = self.head
+    #     if self.head.next_node:
+    #         newHead = self.reverserecursive(self.head.next_node)
+    #         newHead.next_node.next_node = newHead
+    #     newHead.next_node = None
+    #     return newHead
+
+    def detectLoop(self):
+        s = set()
+        temp = self.head
+        while (temp):
+            if (temp in s):
+                return True
+            s.add(temp)
+            temp = temp.next_node
+        return False
+
     def __len__(self):
         return self.size
 
@@ -146,13 +175,17 @@ singllyLinkedList.addAtFirst(5)
 singllyLinkedList.addAtLast(6)
 singllyLinkedList.addAtAny(7, 4)
 singllyLinkedList.traverse()
-print(singllyLinkedList.removeFirst())
+# print(singllyLinkedList.removeFirst())
 print("---")
 singllyLinkedList.traverse()
 print("---")
-print(singllyLinkedList.removeAny(2))
+# print(singllyLinkedList.removeAny(2))
 singllyLinkedList.traverse()
+print(singllyLinkedList.detectLoop())
+# print(singllyLinkedList.reverserecursive(singllyLinkedList.head))
+# print("Reverse")
+# singllyLinkedList.traverse()
 
 
-print(node1.get_data())
-print(node1.get_nextNode().get_data())
+# print(node1.get_data())
+# print(node1.get_nextNode().get_data())

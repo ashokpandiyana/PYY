@@ -1,4 +1,5 @@
 import numpy as np
+from queueLinkedList import QueueLinkedList
 
 
 class Graph:
@@ -55,6 +56,55 @@ class Graph:
     def display(self):
         print(self.adjMatrix)
 
+    def BFS(self, s):
+        i = s
+        q = QueueLinkedList()
+        visited = [0] * self.vertices
+        print(i, end=" ")
+        visited[i] = 1
+        q.enqueue(i)
+        while not q.isEmpty():
+            i = q.dequeue()
+            for j in range(self.vertices):
+                if self.adjMatrix[i][j] == 1 and visited[j] == 0:
+                    print(j, end=" ")
+                    visited[j] = 1
+                    q.enqueue(j)
+    def DFS(self, s):
+        i = s
+        q = QueueLinkedList()
+        visited = [0] * self.vertices
+        print(i, end=" ")
+        visited[i] = 1
+        q.enqueue(i)
+        while not q.isEmpty():
+            i = q.dequeue()
+            for j in range(self.vertices):
+                if self.adjMatrix[i][j] == 1 and visited[j] == 0:
+                    print(j, end=" ")
+                    visited[j] = 1
+                    q.enqueue(j)
+
+
+G = Graph(7)
+G.insertEdge(0, 1)
+G.insertEdge(0, 5)
+G.insertEdge(0, 6)
+G.insertEdge(1, 0)
+G.insertEdge(1, 2)
+G.insertEdge(1, 5)
+G.insertEdge(1, 6)
+G.insertEdge(2, 3)
+G.insertEdge(2, 4)
+G.insertEdge(2, 6)
+G.insertEdge(3, 4)
+G.insertEdge(4, 2)
+G.insertEdge(4, 5)
+G.insertEdge(5, 2)
+G.insertEdge(5, 3)
+G.insertEdge(6, 3)
+print("BFS")
+G.BFS(0)
 
 # Unweighted undirect Graph
 # G = Graph(4)
@@ -98,6 +148,7 @@ class Graph:
 # G.removeEdge(1, 2)
 # print(G.exist_edge(1, 2))
 
+
 # Directed Graph
 # G = Graph(4)
 # G.display()
@@ -117,7 +168,6 @@ class Graph:
 # G.removeEdge(1, 2)
 # print(G.exist_edge(1, 2))
 # G.display()
-
 # weighted Directed Graphs
 # G = Graph(4)
 # G.display()

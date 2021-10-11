@@ -25,9 +25,9 @@ def fib(n):
     return result
 
 
-def noofwaystomakechange(n):
+# def noofwaystomakechange(n):
 
-    return
+#     return
 
 
 print(maxSubsetSum([7, 10, 12, 7, 9, 14]))
