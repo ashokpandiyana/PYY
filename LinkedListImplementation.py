@@ -90,7 +90,7 @@ class LinkedList:
             print("List is Empty")
             return
         p = self.head
-        i += 1
+        i = 1
         while i < self.size - 1:
             p = p.next_node
             i += 1
@@ -99,6 +99,7 @@ class LinkedList:
         e = p.get_data()
         self.tail.next_node = None
         self.size -= 1
+        return e
 
     def removeAny(self, position):
         p = self.head
@@ -107,7 +108,7 @@ class LinkedList:
             p = p.next_node
             i += 1
         e = p.next_node.get_data()
-        p.next = p.next_node.next_node
+        p.next_node = p.next_node.next_node
         self.size -= 1
         return e
 
