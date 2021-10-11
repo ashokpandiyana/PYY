@@ -72,6 +72,7 @@ class LinkedList:
             i += 1
         value.next_node = p.next_node
         p.next_node = value
+        self.size += 1
 
     def removeFirst(self):
         if self.isEmpty():
