@@ -55,10 +55,46 @@
 
 
 # print(shellSort([1, 5, 4, 7, 8, 9, 3, 2]))
+def mergeSort(arr):
+    if len(arr) > 1:
+        mid = len(arr)//2  # Finding the mid of the array
+        L = arr[:mid]  # Dividing the array elements
+        R = arr[mid:]  # into 2 halves
 
-def mergeSort(A, l, r):
-    if l < r:
-        mid = (l + r) // 2
-        mergeSort(A, l, mid)
-        mergeSort(A, mid+1, r)
-        merge(A, l, mid, r)
+        mergeSort(L)  # Sorting the first half
+        mergeSort(R)  # Sorting the second half
+
+        i = j = k = 0
+
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
+
+
+def printList(arr):
+    for i in range(len(arr)):
+        print(arr[i], end=" ")
+    print()
+
+
+arr = [12, 11, 13, 5, 6, 7]
+print("Given array is", end="\n")
+printList(arr)
+mergeSort(arr)
+print("Sorted array is: ", end="\n")
+printList(arr)
