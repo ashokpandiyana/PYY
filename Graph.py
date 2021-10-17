@@ -5,7 +5,8 @@ from queueLinkedList import QueueLinkedList
 class Graph:
     def __init__(self, vertices):
         self.vertices = vertices
-        self.adjMatrix = np.zeros((vertices, vertices))
+        self.adjMatrix = [[0 for x in range(self.vertices)]
+                          for x in range(self.vertices)]
 
     def insertEdge(self, u, v, x=1):
         self.adjMatrix[u][v] = x
@@ -70,6 +71,7 @@ class Graph:
                     print(j, end=" ")
                     visited[j] = 1
                     q.enqueue(j)
+
     def DFS(self, s):
         i = s
         q = QueueLinkedList()
@@ -105,6 +107,8 @@ G.insertEdge(5, 3)
 G.insertEdge(6, 3)
 print("BFS")
 G.BFS(0)
+# print("\nDFS")
+# G.DFS(0)
 
 # Unweighted undirect Graph
 # G = Graph(4)
