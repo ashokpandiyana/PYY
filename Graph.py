@@ -7,6 +7,10 @@ class Graph:
         self.vertices = vertices
         self.adjMatrix = [[0 for x in range(self.vertices)]
                           for x in range(self.vertices)]
+        self._visited = [0] * self.vertices
+
+    def __str__(self):
+        return str(self.adjMatrix)
 
     def insertEdge(self, u, v, x=1):
         self.adjMatrix[u][v] = x
@@ -73,19 +77,12 @@ class Graph:
                     q.enqueue(j)
 
     def DFS(self, s):
-        i = s
-        q = QueueLinkedList()
-        visited = [0] * self.vertices
-        print(i, end=" ")
-        visited[i] = 1
-        q.enqueue(i)
-        while not q.isEmpty():
-            i = q.dequeue()
+        if self._visited[s] == 0:
+            print(s, end=" ")
+            self._visited[s] = 1
             for j in range(self.vertices):
-                if self.adjMatrix[i][j] == 1 and visited[j] == 0:
-                    print(j, end=" ")
-                    visited[j] = 1
-                    q.enqueue(j)
+                if self.adjMatrix[s][j] == 1 and self._visited[j] == 0:
+                    self.DFS(j)
 
 
 G = Graph(7)
@@ -105,10 +102,11 @@ G.insertEdge(4, 5)
 G.insertEdge(5, 2)
 G.insertEdge(5, 3)
 G.insertEdge(6, 3)
+print(G)
 print("BFS")
 G.BFS(0)
-# print("\nDFS")
-# G.DFS(0)
+print("\nDFS")
+G.DFS(0)
 
 # Unweighted undirect Graph
 # G = Graph(4)
